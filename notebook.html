@@ -12992,7 +12992,8 @@ View run at: https://wandb.ai/okaynils/del-mc1/sjf6bnwz
 <li>Within all models, the best performing model was the one which was trained with batchnorm momentum of <code>0.3</code>. Although the margin of difference is really small so this statement does not carry much confidence/certainty</li>
 </ul>
 <h3 id="Interpretation"><a id="toc1_16_4_"></a><a href="#toc0_">Interpretation</a><a class="anchor-link" href="#Interpretation">¶</a></h3><ul>
-<li>It seems as there is not much of a difference for any Batchnorm configuration. This could be because the CIFAR-10 dataset and models inherently are don't shift internal distributions (this is just an assumption)</li>
+<li>It seems as there is not much of a difference for any Batchnorm configuration. This could be because the Batchnorm parameters (beta and gamma = shift of the mean and scale of the variance) are adaptive and therefore the momentum parameter doesn't have that big of an impact</li>
+<li>Compared to the Baseline CNN without Batchnorm we can see that the models with Batchnorm converged faster (on both the train and test set). The task at hand seems to experience some covariate shift and the models profit from using Batchnorm</li>
 </ul>
 </div>
 </div>
